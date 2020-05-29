@@ -3,7 +3,8 @@ services:
   app:
     build: .
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      # var run docker.sock is really just for docker in docker to connect the pipes
+      # - /var/run/docker.sock:/var/run/docker.sock
       - .:/opt/node_app/app
     ports: 
       - 8080:8080
